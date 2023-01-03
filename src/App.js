@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [ count, setCount ] = useState(0);
+  var count2 = 0;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={ () => { setCount(count+1) }}>클릭하면 화면 변경</button>
+      <button onClick={ () => { console.log( count2++ )} }>count2</button>
+      <h2 style={{fontSize : 50}}>{count}</h2>
     </div>
   );
 }
